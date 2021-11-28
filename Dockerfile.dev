@@ -6,8 +6,8 @@ COPY package.json .
 
 RUN npm install
 
-# Not needed since volumes are pointed to local with docker-compose
-# Enable for prod though
-#  COPY . .
+# Not needed locally since volumes are pointed to local with docker-compose
+# Enable for prod AND CI CD
+COPY . .
 
 CMD ["npm", "run", "start"]
