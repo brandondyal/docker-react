@@ -1,0 +1,13 @@
+FROM node:16-alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+
+RUN npm install
+
+# Not needed since volumes are pointed to local with docker-compose
+# Enable for prod though
+#  COPY . .
+
+CMD ["npm", "run", "start"]
